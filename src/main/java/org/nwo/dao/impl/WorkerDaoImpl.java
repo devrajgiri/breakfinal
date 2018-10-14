@@ -41,7 +41,7 @@ public class WorkerDaoImpl implements WorkerDao {
 	@Override
 	public List<NepalWorker> searchByItemNepal(String item, String city, String location) {
 		Session session = sessionFactory.getCurrentSession();
-		String query = "select * FROM Nepalworker  where CONCAT_WS('', item1, item2) "
+		String query = "select * FROM NepalWorker  where CONCAT_WS('', item1, item2) "
 						+"LIKE '%"+item+"%'";
 		List<NepalWorker> nepalWorker = session.createNativeQuery(query,NepalWorker.class).getResultList();
 		return nepalWorker;
@@ -50,7 +50,7 @@ public class WorkerDaoImpl implements WorkerDao {
 	@Override
 	public List<IndianWorker> searchByItemIndia(String item, String city, String location) {
 		Session session = sessionFactory.getCurrentSession();
-		String query = "select * FROM Indianworker  where CONCAT_WS('', item1, item2)"
+		String query = "select * FROM IndianWorker  where CONCAT_WS('', item1, item2)"
 						+" LIKE '%"+item+"%'";
 		List<IndianWorker> indianWorker = session.createNativeQuery(query,IndianWorker.class).getResultList();
 		return indianWorker;
@@ -59,7 +59,7 @@ public class WorkerDaoImpl implements WorkerDao {
 	@Override
 	public List<AmericanWorker> searchByItemAmerica(String item, String city, String location) {
 		Session session = sessionFactory.getCurrentSession();
-		String query = "select * FROM Americanworker where CONCAT_WS('', item1, item2)"
+		String query = "select * FROM AmericanWorker where CONCAT_WS('', item1, item2)"
 						+" LIKE '%"+item+"%'";
 		List<AmericanWorker> americanWorker = session.createNativeQuery(query,AmericanWorker.class).getResultList();
 		return americanWorker;	}
